@@ -185,34 +185,32 @@
         display: none; /* Hidden by default */
         position: fixed;
         z-index: 1000; 
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow-y: auto;
         background-color: var(--lightbox-bg);
-        padding-top: 50px; /* Space for the top close button and margin */
+        padding: 2rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .lightbox-content {
-        margin: auto;
-        display: block;
-        /* UPDATED: Increased max-width and max-height for content container */
-        max-width: 50%;
-        max-height: 50%;
+        width: min(90vw, 1200px);
+        max-height: 90vh;
         position: relative;
-        display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 
     .lightbox-image {
-        width: auto;
-        max-width: 100%;
-        /* UPDATED: Increased max-height for the image itself */
-        max-height: 100%; 
+        width: 100%;
+        height: auto;
+        max-height: calc(90vh - 8rem);
+        object-fit: contain;
         display: block;
-        margin-bottom: 1rem;
         border-radius: 0.5rem;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
